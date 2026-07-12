@@ -11,394 +11,61 @@
             --text-color: #4a4a4a;
             --accent-color: #ff477e;
         }
-
-        * {
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-
         body {
-            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background: linear-gradient(180deg, #ffeef2 0%, #fff5f7 100%);
             color: var(--text-color);
             margin: 0;
             padding: 0;
             text-align: center;
-            overflow-x: hidden;
         }
-
-        /* Floating Hearts */
-        .hearts-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 999;
+        nav {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
-        .heart {
-            position: absolute;
-            color: rgba(255, 71, 126, 0.4);
-            font-size: 20px;
-            animation: floatUp 5s linear infinite;
-            bottom: -20px;
+        nav a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
-
-        @keyframes floatUp {
-            0% { transform: translateY(0) scale(0.5) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-105vh) scale(1.2) rotate(360deg); opacity: 0; }
-        }
-
-        /* Hero Header */
         header {
             background: var(--primary-gradient);
             color: white;
-            padding: 100px 20px;
-            font-size: 28px;
+            padding: 80px 20px;
             border-bottom-left-radius: 50px;
             border-bottom-right-radius: 50px;
-            box-shadow: 0 10px 30px rgba(255, 117, 140, 0.3);
         }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-top: 10px;
-        }
-
         .container {
             max-width: 750px;
-            margin: -40px auto 40px auto;
+            margin: -30px auto 40px auto;
             padding: 40px 30px;
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
             border-radius: 30px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-        }
-
-        /* Luxury Countdown Box */
-        .countdown-container {
-            margin: 20px auto 40px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 24px;
-            box-shadow: 0 10px 25px rgba(255, 117, 140, 0.1);
-        }
-
-        .countdown-container h3 {
-            margin-top: 0;
-            color: var(--accent-color);
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .time-box {
-            background: var(--primary-gradient);
-            color: white;
-            padding: 15px;
-            border-radius: 16px;
-            min-width: 75px;
-            box-shadow: 0 4px 10px rgba(255, 71, 126, 0.2);
-        }
-
-        .time-box span {
-            display: block;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .time-box label {
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            opacity: 0.9;
-        }
-
-        /* Letter Box */
-        .letter {
-            font-size: 17px;
-            line-height: 1.9;
-            text-align: left;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            box-shadow: inset 0 0 20px rgba(255, 117, 140, 0.03);
-            border-left: 5px solid var(--accent-color);
-            margin: 30px 0;
-            white-space: pre-line;
-        }
-
-        /* Interactive Accordion */
-        .accordion-item {
-            background: white;
-            margin: 15px 0;
-            border-radius: 16px;
-            text-align: left;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-            border: 1px solid rgba(255, 71, 126, 0.1);
-        }
-
-        .accordion-header {
-            padding: 18px;
-            background: white;
-            color: #333;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .accordion-header:hover {
-            background: #fffbfb;
-            color: var(--accent-color);
-        }
-
-        .accordion-content {
-            padding: 0 18px;
-            max-height: 0;
-            overflow: hidden;
-            background: #fffafb;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        /* Premium Timeline */
-        .timeline {
-            position: relative;
-            margin: 40px 0;
-            padding-left: 20px;
-            text-align: left;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            background: var(--primary-gradient);
-            top: 10px;
-            bottom: 10px;
-            left: 25px;
-        }
-
-        .timeline-item {
-            padding: 10px 20px 10px 40px;
-            position: relative;
-        }
-
-        .timeline-item::after {
-            content: '✨';
-            position: absolute;
-            left: 15px;
-            top: 14px;
-            font-size: 14px;
-            background: #fff5f7;
-            border-radius: 50px;
-            z-index: 2;
-        }
-
-        .timeline-content {
-            padding: 20px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,0,0,0.01);
-        }
-
-        .timeline-content h4 {
-            margin: 0 0 5px 0;
-            color: var(--accent-color);
-        }
-
-        /* Elegant Button */
-        button {
-            background: var(--primary-gradient);
-            color: white;
-            border: none;
-            padding: 16px 40px;
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(255, 71, 126, 0.35);
-        }
-
-        button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 30px rgba(255, 71, 126, 0.5);
-        }
-
-        #love-result {
-            margin-top: 25px;
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--accent-color);
-            min-height: 30px;
-        }
-
-        footer {
-            margin: 60px 0 40px 0;
-            font-size: 14px;
-            color: #aaa;
-            letter-spacing: 1px;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="hearts-container" id="heartsContainer"></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="letter.html">The Letter</a>
+        <a href="reasons.html">Reasons</a>
+        <a href="journey.html">Our Journey</a>
+        <a href="gallery.html">Our Gallery</a>
+    </nav>
 
     <header>
         <h1>🎂 Happy Birthday, Madam Ji! 🎂</h1>
-        <p>You make the world an infinitely brighter place.</p>
+        <p>Welcome to your personal digital corner.</p>
     </header>
 
     <div class="container">
-        <div class="countdown-container">
-            <h3>Counting Down to Your Day...</h3>
-            <div class="countdown" id="countdown">
-                <div class="time-box"><span id="days">00</span><label>Days</label></div>
-                <div class="time-box"><span id="hours">00</span><label>Hours</label></div>
-                <div class="time-box"><span id="minutes">00</span><label>Mins</label></div>
-                <div class="time-box"><span id="seconds">00</span><label>Secs</label></div>
-            </div>
-        </div>
-
-        <h2>A Note Straight From My Heart ❤️</h2>
-        <div class="letter">
-            Dear Madam Ji,
-
-            Happy Birthday! Today is the perfect occasion to remind you of a beautiful truth: no matter how much you think I love you, I love you infinitely more than you could ever imagine. 
-
-            You bring so much light, laughter, and absolute peace into my world. Every single day spent knowing you is a gift, and I am so deeply grateful to celebrate another year of your wonderful life. I hope today brings you as much pure happiness as you effortlessly give to me.
-
-            Always and forever yours,
-            Divyansh
-        </div>
-
-        <h2 style="margin-top: 50px;">A Few Little Things I Adore 🌸</h2>
-        
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">Your Beautiful Smile <span>✨</span></div>
-            <div class="accordion-content">
-                <p style="padding: 15px 0;">It has the magic power to completely fix my worst days. Seeing you happy is my favorite part of any day.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">Your Pure Heart <span>✨</span></div>
-            <div class="accordion-content">
-                <p style="padding: 15px 0;">The genuine kindness and warmth you carry inside you inspires me daily. You are incredibly special.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">How Safe You Make Me Feel <span>✨</span></div>
-            <div class="accordion-content">
-                <p style="padding: 15px 0;">Just talking to you handles all my stress. You are my safe haven, my quiet corner, and my favorite person.</p>
-            </div>
-        </div>
-
-        <h2 style="margin-top: 50px;">Our Beautiful Journey 📸</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h4>Where It All Began</h4>
-                    <p>The day you walked into my story and rewriting it into something entirely magical.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h4>My Absolute Favorite Memory</h4>
-                    <p>Those effortless laughs shared over everything and nothing. That’s when I knew you were the one.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h4>Today & Always</h4>
-                    <p>Celebrating your wonderful presence today, looking forward to creating an eternity of memories right beside you.</p>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin: 50px 0 20px 0;">
-            <h3>How much do I love you? 🤔</h3>
-            <p style="color: #888; font-size: 14px; margin-bottom: 20px;">Click below to run the ultimate diagnostics.</p>
-            <button onclick="revealLove()">Measure My Love</button>
-            <div id="love-result"></div>
-        </div>
+        <h2>Welcome Madam Ji ✨</h2>
+        <p>Divyansh made this website entirely for you to celebrate August 20th. Use the menu above to explore all the secret pages hidden inside!</p>
     </div>
-
-    <footer>
-        Designed with love by Divyansh for Madam Ji | 2026
-    </footer>
-
-    <script>
-        function revealLove() {
-            const resultDiv = document.getElementById('love-result');
-            resultDiv.innerHTML = "Error 404: Quantum scale completely shattered. My love for you is too massive for the internet to compute! ♾️❤️";
-        }
-
-        function toggleAccordion(element) {
-            const content = element.nextElementSibling;
-            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
-                content.style.maxHeight = "0px";
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-        }
-
-        function createHeart() {
-            const container = document.getElementById('heartsContainer');
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-            heart.style.fontSize = Math.random() * 12 + 12 + 'px';
-            container.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 5000);
-        }
-        setInterval(createHeart, 350);
-
-        // Countdown configured to August 20, 2026
-        const birthdayTarget = new Date(2026, 7, 20, 0, 0, 0).getTime(); 
-
-        const countdownInterval = setInterval(function() {
-            const now = new Date().getTime();
-            const difference = birthdayTarget - now;
-
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-
-            if (difference < 0) {
-                clearInterval(countdownInterval);
-                document.getElementById("countdown").innerHTML = "<h2 style='color: var(--accent-color); margin:0;'>🎉 HAPPY BIRTHDAY MADAM JI! 🎉</h2>";
-            }
-        }, 1000);
-    </script>
 
 </body>
 </html>
