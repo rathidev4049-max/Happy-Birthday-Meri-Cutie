@@ -6,21 +6,22 @@
     <title>Happy Birthday, Madam Ji! ❤️</title>
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
-            --card-bg: rgba(255, 255, 255, 0.9);
+            --primary-gradient: linear-gradient(135deg, #ff6b8b 0%, #ff8eab 100%);
+            --card-bg: rgba(255, 255, 255, 0.92);
             --text-color: #4a4a4a;
-            --accent-color: #ff477e;
+            --accent-color: #ff3366;
+            --soft-glow: 0 10px 30px rgba(255, 107, 139, 0.2);
         }
 
         * {
             box-sizing: border-box;
             scroll-behavior: smooth;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(180deg, #ffeef2 0%, #fff5f7 100%);
+            background: linear-gradient(180deg, #fff0f3 0%, #ffe3e8 100%);
             color: var(--text-color);
             margin: 0;
             padding: 0;
@@ -28,32 +29,34 @@
             overflow-x: hidden;
         }
 
-        /* Sticky Navigation Bar */
+        /* Fixed Navigation Bar */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 18px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.04);
             z-index: 1000;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
         }
 
         nav a {
             color: var(--accent-color);
             text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
+            margin: 0 12px;
+            font-weight: 600;
             font-size: 14px;
+            letter-spacing: 0.5px;
         }
 
         nav a:hover {
-            color: #d01c54;
+            color: #b3002d;
+            transform: scale(1.05);
         }
 
-        /* Floating Hearts Layer */
+        /* Floating Hearts */
         .hearts-container {
             position: fixed;
             top: 0;
@@ -66,127 +69,194 @@
 
         .heart {
             position: absolute;
-            color: rgba(255, 71, 126, 0.35);
-            font-size: 20px;
-            animation: floatUp 5s linear infinite;
+            color: rgba(255, 51, 102, 0.38);
+            animation: floatUp 5.5s linear infinite;
             bottom: -20px;
         }
 
         @keyframes floatUp {
-            0% { transform: translateY(0) scale(0.5); opacity: 1; }
-            100% { transform: translateY(-105vh) scale(1.2); opacity: 0; }
+            0% { transform: translateY(0) scale(0.6) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-105vh) scale(1.3) rotate(360deg); opacity: 0; }
         }
 
-        /* Sections Header */
+        /* Romantic Header */
         header {
             background: var(--primary-gradient);
             color: white;
-            padding: 120px 20px 80px 20px;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-            margin-bottom: 40px;
+            padding: 140px 20px 90px 20px;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            box-shadow: var(--soft-glow);
         }
 
-        header h1 { margin: 0; font-size: 2.3rem; }
-        header p { opacity: 0.9; font-size: 1.1rem; }
+        header h1 { 
+            margin: 0; 
+            font-size: 2.6rem; 
+            text-shadow: 2px 2px 8px rgba(224, 30, 90, 0.2);
+        }
+        
+        header p { 
+            opacity: 0.95; 
+            font-size: 1.15rem; 
+            font-style: italic;
+            margin-top: 10px;
+        }
 
-        /* Smooth Scrolling Sections */
+        /* Main Section containers */
         section {
-            padding: 80px 20px 20px 20px;
-            margin-top: -40px;
+            padding: 90px 20px 20px 20px;
+            margin-top: -30px;
         }
 
         .container {
-            max-width: 750px;
+            max-width: 780px;
             margin: 0 auto;
-            padding: 40px 30px;
+            padding: 45px 35px;
             background: var(--card-bg);
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 35px;
+            box-shadow: 0 20px 40px rgba(255, 107, 139, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
         }
 
-        /* Countdown Style */
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        /* Countdown Grid */
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 15px;
+            margin-top: 25px;
         }
 
         .time-box {
-            background: var(--primary-gradient);
-            color: white;
-            padding: 12px;
-            border-radius: 12px;
-            min-width: 70px;
+            background: white;
+            color: var(--accent-color);
+            padding: 14px;
+            border-radius: 18px;
+            min-width: 75px;
+            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.15);
+            font-weight: bold;
         }
 
-        .time-box span { display: block; font-size: 22px; font-weight: bold; }
-        .time-box label { font-size: 10px; text-transform: uppercase; }
+        .time-box span { display: block; font-size: 24px; }
+        .time-box label { font-size: 10px; text-transform: uppercase; color: #888; letter-spacing: 0.5px; }
+
+        /* The Special Letter View */
+        .heart-letter {
+            text-align: left; 
+            line-height: 2; 
+            background: #fffafb; 
+            padding: 35px; 
+            border-radius: 24px;
+            box-shadow: inset 0 0 25px rgba(255, 107, 139, 0.03);
+            border-right: 4px dashed rgba(255, 51, 102, 0.3);
+            border-left: 5px solid var(--accent-color);
+            font-size: 16.5px;
+            color: #3d3d3d;
+        }
 
         /* Accordion Style */
         .accordion-item {
             background: white;
-            margin: 12px 0;
-            border-radius: 12px;
+            margin: 15px 0;
+            border-radius: 16px;
             text-align: left;
             overflow: hidden;
-            border: 1px solid rgba(255, 71, 126, 0.15);
+            border: 1px solid rgba(255, 51, 102, 0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
         }
 
         .accordion-header {
-            padding: 15px;
+            padding: 18px;
             font-weight: 600;
             cursor: pointer;
             background: #fff;
+            display: flex;
+            justify-content: space-between;
         }
+
+        .accordion-header:hover { color: var(--accent-color); }
 
         .accordion-content {
-            padding: 0 15px;
+            padding: 0 18px;
             max-height: 0;
             overflow: hidden;
-            background: #fffbfb;
+            background: #fffdfd;
         }
 
-        /* Timeline Style */
+        /* Timeline Box */
         .timeline-box {
             margin: 20px 0;
-            padding: 20px;
+            padding: 25px;
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             text-align: left;
-            border-left: 4px solid var(--accent-color);
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.01);
         }
+        
+        .timeline-box h4 { margin: 0 0 8px 0; color: var(--accent-color); font-size: 1.1rem; }
 
         /* Gallery/Upload Section */
         .upload-zone {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            border: 2px dashed var(--accent-color);
+            background: #fffcfd;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 2px dashed #ff8eab;
         }
 
         .grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 18px;
         }
 
         .grid img {
-            width: 200px;
-            height: 200px;
+            width: 210px;
+            height: 210px;
             object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(255, 107, 139, 0.1);
+        }
+
+        /* Interactive Diagnosic Button */
+        button {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 16px 45px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 51, 102, 0.25);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(255, 51, 102, 0.4);
+        }
+
+        #love-result {
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent-color);
         }
 
         footer {
-            margin: 60px 0 30px 0;
+            margin: 70px 0 40px 0;
             font-size: 13px;
-            color: #aaa;
+            color: #b5b5b5;
+            letter-spacing: 0.5px;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -197,15 +267,15 @@
 
     <nav>
         <a href="#home">Home</a>
-        <a href="#letter">Letter</a>
+        <a href="#letter">My Feelings</a>
         <a href="#reasons">Reasons</a>
-        <a href="#journey">Journey</a>
+        <a href="#journey">Our Story</a>
         <a href="#gallery">Gallery</a>
     </nav>
 
     <header id="home">
         <h1>🎂 Happy Birthday, Madam Ji! 🎂</h1>
-        <p>Your beautiful personal corner created by Divyansh ✨</p>
+        <p>Created with infinite care by your Divyansh ✨</p>
         
         <div class="countdown" id="countdown">
             <div class="time-box"><span id="days">00</span><label>Days</label></div>
@@ -218,16 +288,20 @@
     <section id="letter">
         <div class="container">
             <h2>Straight From My Heart ❤️</h2>
-            <p style="text-align: left; line-height: 1.8; background: white; padding: 20px; border-radius: 15px;">
-                Dear Madam Ji,
-
-                Happy Birthday! Today is the perfect occasion to remind you of a beautiful truth: no matter how much you think I love you, I love you infinitely more than you could ever imagine. 
-
-                You bring so much light, laughter, and absolute peace into my world. Every single day spent knowing you is a gift, and I am so deeply grateful to celebrate another year of your wonderful life.
-
-                Always and forever yours,
-                <strong>Divyansh</strong>
-            </p>
+            <div class="heart-letter">
+                First of all Happy Birthday Meri Jaan ,,,, 
+                
+                Meri jaan m apko kya btao m apse kitna pyaar krta hu , m kabhi kabhi ulti harkate krr deta hu uske lie i m really sorryy , m kabhi bi apko dukh ni pauchana chata prrr mujse harkate ho jati h , prrr aaj apka din h aur maine ye sab apke lie bhut mehnat se bnaya h aur bhut time aur efforts lge h.
+                
+                i lovee youuu merii jaan , m apse bhut pyaar krta hu , m apke bina kabhi ni reh skta , aur m apni puri life apke sath beetana chata hu m apke sath ek happy life jeena chata hu , apko special feel krwana chata huu , apke sath apni family banana chata hu.
+                
+                m chata hu hnare 2 bacche ho ek ldka ek ldki jinke pyaare se naam ho aur ve aap pr jaye taki ve apki tarah cute bne aur beautiful bii , m apke sath apke har sukh dukh m rehna chata hu , m apko vo feel dena chata hu jo aap deserve krtii ho.
+                
+                happy birthdayy meri jaannn , i will love you forever... 😘😘😘 And my love for you will not end 😘😘💗💗💗
+                
+                <br><br>
+                <span style="display:block; text-align:right; font-weight:600; color:var(--accent-color);">- Yours, Divyansh</span>
+            </div>
         </div>
     </section>
 
@@ -236,18 +310,18 @@
             <h2>Things I Adore About You 🌸</h2>
             
             <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">Your Beautiful Smile</div>
-                <div class="accordion-content"><p style="padding: 15px 0;">It has the magic power to completely fix my worst days.</p></div>
+                <div class="accordion-header" onclick="toggleAccordion(this)">Your Beautiful Smile <span>▼</span></div>
+                <div class="accordion-content"><p style="padding: 15px 0; margin:0;">It has the magic power to completely fix my worst days instantly.</p></div>
             </div>
 
             <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">Your Pure Heart</div>
-                <div class="accordion-content"><p style="padding: 15px 0;">The genuine kindness you carry inside you inspires me daily.</p></div>
+                <div class="accordion-header" onclick="toggleAccordion(this)">Your Pure Heart <span>▼</span></div>
+                <div class="accordion-content"><p style="padding: 15px 0; margin:0;">The genuine kindness you carry inside you inspires me every single day.</p></div>
             </div>
 
             <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">How Safe You Make Me Feel</div>
-                <div class="accordion-content"><p style="padding: 15px 0;">Just talking to you handles all my stress. You are my safe haven.</p></div>
+                <div class="accordion-header" onclick="toggleAccordion(this)">How Safe You Make Me Feel <span>▼</span></div>
+                <div class="accordion-content"><p style="padding: 15px 0; margin:0;">Just hearing your voice handles all my stress. You are my actual safe haven.</p></div>
             </div>
         </div>
     </section>
@@ -256,12 +330,12 @@
         <div class="container">
             <h2>Our Beautiful Journey ✨</h2>
             <div class="timeline-box">
-                <h4>Where It All Began</h4>
-                <p>The day you walked into my story and changed everything for the absolute better.</p>
+                <h4>Where It All Began 🗺️</h4>
+                <p style="margin:0; color:#666;">The unforgettable day you walked into my story and changed everything into something beautiful.</p>
             </div>
             <div class="timeline-box">
-                <h4>Today & Always</h4>
-                <p>Celebrating your presence today, looking forward to creating an eternity of memories next to you.</p>
+                <h4>Today & Beyond ♾️</h4>
+                <p style="margin:0; color:#666;">Celebrating your beautiful presence today, looking forward to living out every dream written in my letter to you.</p>
             </div>
         </div>
     </section>
@@ -272,32 +346,42 @@
             
             <div class="upload-zone">
                 <h4>Add a New Picture, Madam Ji!</h4>
-                <p style="font-size: 13px; color: #777;">Choose any image from your device to instantly display it below:</p>
+                <p style="font-size: 13px; color: #777; margin-bottom: 15px;">Choose any image from your device to instantly display it on our board:</p>
                 <input type="file" id="imageInput" accept="image/*">
             </div>
 
             <div class="grid" id="galleryGrid">
-                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" alt="Starter Pic">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" alt="Starter Image">
+            </div>
+
+            <div style="margin: 55px 0 10px 0; border-top: 1px dashed #ffd1dc; padding-top: 40px;">
+                <h3>Want to measure my love data? 🤔</h3>
+                <p style="color: #888; font-size: 13px; margin-bottom: 20px;">Click below to calculate the real metrics.</p>
+                <button onclick="revealLove()">Run Diagnostic</button>
+                <div id="love-result"></div>
             </div>
         </div>
     </section>
 
     <footer>
-        Designed with love by Divyansh for Madam Ji | 2026
+        Designed with absolute love and effort by Divyansh for Madam Ji | 2026
     </footer>
 
     <script>
-        // Interactive Accordion
+        // Interactive Accordions
         function toggleAccordion(element) {
             const content = element.nextElementSibling;
+            const indicator = element.querySelector('span');
             if (content.style.maxHeight && content.style.maxHeight !== "0px") {
                 content.style.maxHeight = "0px";
+                indicator.innerHTML = "▼";
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
+                indicator.innerHTML = "▲";
             }
         }
 
-        // Live Upload Feature
+        // Live Upload Handler
         document.getElementById('imageInput').addEventListener('change', function() {
             const file = this.files[0];
             if (file) {
@@ -316,16 +400,21 @@
             const container = document.getElementById('heartsContainer');
             const heart = document.createElement('div');
             heart.classList.add('heart');
-            heart.innerHTML = '❤️';
+            heart.innerHTML = ['❤️','💖','✨','🌸'][Math.floor(Math.random() * 4)];
             heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-            heart.style.fontSize = Math.random() * 12 + 12 + 'px';
+            heart.style.animationDuration = Math.random() * 2 + 3.5 + 's';
+            heart.style.fontSize = Math.random() * 14 + 12 + 'px';
             container.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 5000);
+            setTimeout(() => { heart.remove(); }, 5500);
         }
-        setInterval(createHeart, 350);
+        setInterval(createHeart, 300);
 
-        // Countdown configured to August 20, 2026
+        // Love Diagnostic Interactive Response
+        function revealLove() {
+            document.getElementById('love-result').innerHTML = "Error 505: Quantum Scale Overloaded! Divyansh's love for Madam Ji is mathematically infinite and too massive for the server logs to process! ♾️💋";
+        }
+
+        // Target Date Configured to August 20, 2026
         const birthdayTarget = new Date(2026, 7, 20, 0, 0, 0).getTime(); 
 
         const countdownInterval = setInterval(function() {
@@ -344,7 +433,7 @@
 
             if (difference < 0) {
                 clearInterval(countdownInterval);
-                document.getElementById("countdown").innerHTML = "<h3 style='color: white; margin: 10px 0 0 0;'>🎉 HAPPY BIRTHDAY MADAM JI! 🎉</h3>";
+                document.getElementById("countdown").innerHTML = "<h3 style='color: white; background: var(--accent-color); padding: 10px 30px; border-radius: 50px; margin: 15px 0 0 0;'>🎉 HAPPY BIRTHDAY MADAM JI! 🎉</h3>";
             }
         }, 1000);
     </script>
