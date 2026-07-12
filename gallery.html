@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Gallery</title>
+    <style>
+        body { font-family: sans-serif; background: #fff5f7; text-align: center; margin: 0; }
+        nav { background: white; padding: 15px; margin-bottom: 30px; }
+        nav a { color: #ff477e; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        .upload-section { background: white; max-width: 500px; margin: 0 auto 30px auto; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .grid img { width: 250px; height: 250px; object-fit: cover; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        input[type="file"] { margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="letter.html">The Letter</a>
+        <a href="reasons.html">Reasons</a>
+        <a href="journey.html">Our Journey</a>
+        <a href="gallery.html">Our Gallery</a>
+    </nav>
+
+    <h2>Memory Gallery 📸</h2>
+    
+    <div class="upload-section">
+        <h3>Add a New Picture, Madam Ji!</h3>
+        <p>Choose an image from your device to instantly add it to our gallery grid below:</p>
+        <input type="file" id="imageInput" accept="image/*">
+    </div>
+
+    <div class="grid" id="galleryGrid">
+        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" alt="Love">
+    </div>
+
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const galleryGrid = document.getElementById('galleryGrid');
+
+        imageInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.addEventListener('load', function() {
+                    const newImg = document.createElement('img');
+                    newImg.setAttribute('src', this.result);
+                    galleryGrid.appendChild(newImg);
+                });
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
